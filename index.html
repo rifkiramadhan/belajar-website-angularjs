@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="xapp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Training</title>
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="xctrl">
+    <h1>Hello World</h1>
+    
+    <hr>
+    <div>
+        <span>{{x}}</span>
+        <br>
+        <input type="text" ng-model="x">
+    </div>
+    
+    <hr>
+    
+    <h2>{{operation}}</h2>
+    <input type="text" ng-model="obj1">
+    <input type="text" ng-model="obj2">
+    <span> = {{result}}</span>
+    
+    <br><br>
+    
+    <button ng-click="operate(1)">Add</button>
+    <button ng-click="operate(2)">Subtration</button>
+    <button ng-click="operate(3)">Multiply</button>
+    <button ng-click="operate(4)">Divide</button>
+</body>
+</html>
