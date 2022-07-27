@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ngRepeat Tab</title>
+    <script src="../js/angular.js"></script>
+    <script src="./app.js"></script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h1>Table Siswa</h1>
+    <p>
+      <label>Kata Kunci</label>
+      <input type="search" ng-model="q" placeholder="Cari Siswa" />
+    </p>
+    <p>
+      <table border="1">
+        <tr>
+          <th>Nama</th>
+          <th>Kelas</th>
+          <th>Nilai</th>
+        </tr>
+        <tr ng-repeat="s in (results = (students | filter: q))">
+          <td>{{ s.name }}</td>
+          <td>{{ s.class }}</td>
+          <td>{{ s.score }}</td>
+        </tr>
+        <tr ng-if="results.length == 0">
+          <td colspan="3">Hasil tidak ditemukan.</td>
+        </tr>
+      </table>
+    </p>
+  </body>
+</html>
