@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ngRepeat Tab</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="../js/angular.js"></script>
+    <script src="./app.js"></script>
+  </head>
+  <body ng-controller="myCtrl">
+
+    <div class="container">
+      <h2 class="text-center">Table Siswa</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="btn-group" role="group">
+            <button 
+              type="button"
+              ng-repeat="p in pagesizes"
+              ng-click="changeAction(p)"
+              class="btn btn-default"
+            >{{ p }}</button>
+          </div>
+        </div>
+
+        <div class="col-md-4 pull-right">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">
+              <i class="glyphicon glyphicon-search"></i>
+            </span>
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Kata Kunci" 
+              aria-describedby="basic-addon1"
+              ng-model="q"
+              >
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <table class="table h5">
+          <tr>
+            <th><a href="" ng-click="boolname = ordering(boolname, 'name');">Nama</a></th>
+            <th><a href="" ng-click="boolclass = ordering(boolclass, 'class');">Kelas</a></th>
+            <th><a href="" ng-click="boolscore = ordering(boolscore, 'score');">Nilai</a></th>
+          </tr>
+          <tr ng-repeat="s in (results = (students | filter: q | orderBy: ord: ordstatus))"
+              ng-if="$index >= (currentpage * pagesize) && $index < ((currentpage + 1) * pagesize)"
+          >
+            <td>{{ s.name }}</td>
+            <td>{{ s.class }}</td>
+            <td>{{ s.score }}</td>
+          </tr>
+          <tr ng-if="results.length == 0">
+            <td colspan="3">Hasil tidak ditemukan.</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="row text-center">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true" ng-click="paging(0)">&laquo;</span>
+            </a>
+          </li>
+          <li 
+            ng-repeat="i in getNumber(pagenumber) track by $index"
+            ng-class="currentpage == $index ? 'active' : ''"
+          >
+            <a href="#" ng-click="getPage($index)">{{ $index + 1 }}</a>
+          </li>
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true" ng-click="paging(1)">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="row text-center">
+        <small>Halaman {{ currentpage + 1 }} dari {{ pagenumber }} halaman</small>
+      </div>
+
+  </body>
+</html>
