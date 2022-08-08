@@ -3,6 +3,7 @@
 ## Cara Installasi
 
 - npm install angular bootstrap --save
+- npm install angular-ui-router --save
 
 ## Pengertian
 

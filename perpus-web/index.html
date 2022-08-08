@@ -20,16 +20,16 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Perpustakaan</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
-              <a class="nav-link" href="#">Pricing</a>
-              <a class="nav-link disabled">Disabled</a>
+              <a class="nav-link" aria-current="page" href="/">Beranda</a>
+              <a class="nav-link" href="#!/author">Penulis</a>
+              <a class="nav-link" href="#!/book">Buku</a>
+              <a class="nav-link" href="#!/about">Tentang</a>
             </div>
           </div>
         </div>
@@ -38,12 +38,15 @@
 
     <!-- Container Start -->
     <div class="container">
-        <h1>{{ hello }}</h1>
+        <ui-view></ui-view>
     </div>
     <!-- Container End -->
 
     <!-- Angular Script -->
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
+
+    <!-- Angular UI Router -->
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 </body>
 </html>
