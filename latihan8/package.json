@@ -1,0 +1,16 @@
+{
+  "name": "perpus-web",
+  "version": "1.0.0",
+  "description": "Web application for perpustakaan system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rifki Ramadhan",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.3",
+    "angular-ui-router": "^1.0.30",
+    "bootstrap": "^5.2.0"
+  }
+}

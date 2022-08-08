@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar AngularJS</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        .bg-custom {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body ng-app="perpustakaan-app" ng-controller="my-controller">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Perpustakaan</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="/">Beranda</a>
+              <a class="nav-link" href="#!/author">Penulis</a>
+              <a class="nav-link" href="#!/book">Buku</a>
+              <a class="nav-link" href="#!/about">Tentang</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Container Start -->
+    <div class="container">
+        <ui-view></ui-view>
+    </div>
+    <!-- Container End -->
+
+    <!-- Angular Script -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Angular UI Router -->
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+</body>
+</html>
